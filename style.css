@@ -1,0 +1,397 @@
+/*----Google font-Poppins---*/
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Bacasime+Antique&family=Kanit:wght@300&family=Mukta:wght@300&family=Poppins:ital,wght@0,100;0,400;0,900;1,400;1,800;1,900&family=Space+Grotesk:wght@300&family=Ubuntu:ital,wght@1,300&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+    background:linear-gradient(to left top, #031a94, #f117d1);
+    padding: 0 35px;
+   
+}
+.wrapper{
+    max-width:1100px;
+    width:100%;
+    position: relative;
+    /*background-color: chartreuse;*/
+    padding:20px;
+}
+.wrapper i{
+    height:50px;
+    width:50px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    font-size: 1.25rem;
+    transform: translatey(-50%);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85); 
+}
+
+.wrapper i:first-child{
+    left:-5px;
+}
+.wrapper i:last-child{
+    right:-5px;
+}
+.wrapper .carousel{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns: 32.3%;
+  gap:16px;
+  border-radius: 8px;
+  overflow-x:auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel :where(.card, .img){
+   display: flex;
+    align-items: center;           
+    flex-direction: column;
+}
+.carousel.no-transition{
+    scroll-behavior: auto;
+}
+.carousel.dragging{
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+    
+}
+.carousel.dragging .card{
+    cursor: grab;
+    user-select:none;
+}
+.carousel .card{
+    scroll-snap-align:start ;
+   height: 500px;      
+  list-style: none;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  padding-bottom: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  
+}
+.carousel::-webkit-scrollbar{
+    display:none;
+}
+ .carousel .card .img{
+ /*background-color: #f117d1;*/
+ width:343px;
+ height:200px;
+ margin:0 auto;
+ border-radius: 8px 8px 0px 0px;                        
+}
+.card .img img{
+    width:100%;
+    height:200px;                       
+    object-fit:cover;
+    border-radius: 8px 8px 0px 0px;
+}
+.carousel .card h2{
+    font-weight: 700;
+    font-size:1.5rem;
+    margin:20px 0px 8px;
+    text-align: center;
+}
+.carousel .card p{
+    color:rgb(66, 64, 64);
+    font-size: 1rem;
+    padding:15px 5px;
+
+}
+.carousel .card span{
+    color:#02021a;
+    font-size:1.1rem;
+    font-weight: bold;
+    
+}
+.carousel .card dl{
+    text-align: justify;
+}
+.carousel .card dl dt{
+    font-weight: 700;
+    color:#02021a;
+    font-size: 1.4rem;
+}
+.carousel .card dl dd{
+   color:darkblue;
+   font-size: 1rem;
+   font-weight: 700;
+}
+/*@media (min-width:900px) and (max-width:900px){
+
+    .carousel .card .node-text1{
+      margin:10px 0px;
+    }
+    .carousel .card .node-text2{
+      padding:5px 0px;
+    } 
+    .carousel .card .img{
+        width:100%;
+        height:100%;
+    }
+    .card .img img{
+        width:100%;
+        height:100%;                        
+    }
+}*/
+
+/*@media screen and (max-width:900px){
+    .wrapper .carousel{
+        grid-auto-columns:50.0% ;
+
+    }
+    .carousel .card .node-text1{
+      margin:10px 0px;
+    }
+    .carousel .card .node-text2{
+      padding:5px 0px;
+    } 
+    .carousel .card .img{
+        width:100%;
+        height:100%;
+    }
+    .card .img img{
+        width:100%;
+        height:100%;                     
+    }
+}*/
+
+/*@media screen and (max-width:600px){
+    .wrapper .carousel{
+        grid-auto-columns: 100%;
+    }
+    .carousel .card .node-text1{
+        margin:10px 0px;
+      }
+      .carousel .card .node-text2{
+        padding:5px 5px;
+      }
+      .carousel .card .img{
+        width:100%;
+        height:100%;
+    }
+     .card .img img{
+        width:100%;
+        height:100%;                       
+     }
+}*/
+
+@media (min-width:950px) and (max-width:1500px){
+    body{
+        width:100%;
+        height:100%;
+        min-height: 40px;
+    }
+   
+    .wrapper .carousel{
+        grid-auto-columns:32.3%;
+    }
+    .carousel .card{
+        width:100%;
+        height: 100%;
+    }
+    .carousel .card .img, .carousel .card .img, .card .img img{
+        width:100%;
+    }
+    .carousel .card h2{
+        font-size:1.3rem;
+    }
+    .carousel .card p{
+        color:rgb(66, 64, 64);
+        font-size:.9rem;
+        padding:10px 10px;
+    }
+    .carousel .card span{
+        color:#02021a;
+        font-size:1.1rem;
+        font-weight: bold;
+    }
+    .carousel .card dl{
+      text-align: justify;
+    }
+    .carousel .card dl dt{
+        font-weight: 700;
+        color:#02021a;
+        font-size: 1.1rem;
+    }
+    .carousel .card dl dd{
+       color:darkblue;
+       font-size:1rem;
+       font-weight: 700;
+    }
+}
+@media (min-width:600px) and (max-width:950px){
+    body{
+        width:100%;
+        height:100%;
+        min-height:40vh;
+    }
+   
+    .wrapper .carousel{
+        grid-auto-columns: 50.0%;
+    }
+    .carousel .card{
+        width:100%;
+        height:100%;
+    }
+    .carousel .card .node-text1{
+        margin:10px 0px;
+      }
+      .carousel .card .node-text2{
+        padding:5px 5px;
+      }
+      .carousel .card .img, .card .img img, .carousel .card .img{
+        width:100%;
+    }
+     .carousel .card h2{
+        font-size:1.2rem;
+    }
+    .carousel .card p{
+        color:rgb(66, 64, 64);
+        font-size: 1rem;
+        padding:10px 10px;
+    
+    }
+    .carousel .card span{
+        color:#02021a;
+        font-size:1rem;
+        font-weight: bold;
+        
+    }
+    .carousel .card dl{
+      text-align: justify;
+    }
+    .carousel .card dl dt{
+        font-weight: 700;
+        color:#02021a;
+        font-size: 1.2rem;
+    }
+    .carousel .card dl dd{
+       color:darkblue;
+       font-size: 1rem;
+       font-weight: 700;
+    }
+}
+
+@media (min-width:400px) and (max-width:600px){
+    body{
+        width:100%;
+        height:100%;
+       min-height:73vh;
+    }
+   
+    .wrapper .carousel{
+        grid-auto-columns: 100%;
+    }
+    .carousel .card{
+        width:100%;
+        height: 100%;
+    }
+    .carousel .card .node-text1{
+        margin:10px 0px;
+      }
+      .carousel .card .node-text2{
+        padding:5px 5px;
+      }
+      .carousel .card .img, .card .img img, .carousel .card .img{
+        width:100%;
+    }
+     .carousel .card h2{
+        font-size:1.2rem;
+    }
+    .carousel .card p{
+        color:rgb(66, 64, 64);
+        font-size: 1rem;
+        padding:10px 10px;
+    
+    }
+    .carousel .card span{
+        color:#02021a;
+        font-size:1rem;
+        font-weight: bold;
+        
+    }
+    .carousel .card dl{
+      text-align: justify;
+    }
+    .carousel .card dl dt{
+        font-weight: 700;
+        color:#02021a;
+        font-size: 1.1rem;
+    }
+    .carousel .card dl dd{
+       color:darkblue;
+       font-size:1rem;
+       font-weight: 700;
+    }
+}
+
+@media (min-width:250px) and (max-width:400px){
+    body{
+        width:100%;
+        height:100%;
+       min-height:70vh;
+    }
+   
+    .wrapper .carousel{
+        grid-auto-columns: 100%;
+    }
+    .carousel .card{
+        width:100%;
+        height:100%;
+    }
+    .carousel .card .node-text1{
+        margin:10px 0px;
+      }
+      .carousel .card .node-text2{
+        padding:5px 5px;
+      }
+      .carousel .card .img, .card .img img, .carousel .card .img{
+        width:100%;
+        height:100%;
+    }
+     .carousel .card h2{
+        font-size:1.2rem;
+    }
+    .carousel .card p{
+        color:rgb(66, 64, 64);
+        font-size:1rem;
+        padding:10px 10px;
+    
+    }
+    .carousel .card span{
+        color:#02021a;
+        font-size:1rem;
+        font-weight: bold;
+        
+    }
+    .carousel .card dl{
+      text-align: justify;
+    }
+    .carousel .card dl dt{
+        font-weight: 700;
+        color:#02021a;
+        font-size: 1.1rem;
+    }
+    .carousel .card dl dd{
+       color:darkblue;
+       font-size:.9rem;
+       font-weight: 700;
+    }
+}
